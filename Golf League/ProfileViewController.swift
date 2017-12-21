@@ -8,14 +8,20 @@
 
 import UIKit
 
+
 class ProfileViewController: UIViewController {
 
     //MARK: Properties
+    @IBOutlet weak var nameLabel: UILabel!
     
+    
+    var golfer: Golfer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        loadDefaultGolfer()
+        updateUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +29,17 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //MARK: Private methods
+    private func updateUI() {
+        guard let golfer = self.golfer else {
+            fatalError("No golfer set")
+        }
+        nameLabel.text = "\(golfer.firstName) \(golfer.lastName)"
+    }
+    
+    private func loadDefaultGolfer() {
+        golfer = Golfer(firstName: "AJ", lastName: "Motika", emailAddress: "ajmotika@gmail.com", phoneNumber: nil)
+    }
 
 }
 

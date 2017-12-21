@@ -23,6 +23,4 @@ class Golfer {
         self.emailAddress = emailAddress
         self.phoneNumber = phoneNumber
     }
-    
-    
 }
