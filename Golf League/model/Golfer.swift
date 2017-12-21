@@ -14,10 +14,10 @@ class Golfer {
     var firstName: String
     var lastName: String
     var emailAddress: String?
-    var phoneNumber: u_long?
+    var phoneNumber: UInt64?
     
     //MARK: Initialization
-    init(firstName : String, lastName: String, emailAddress: String?, phoneNumber: u_long?) {
+    init(firstName : String, lastName: String, emailAddress: String?, phoneNumber: UInt64?) {
         self.firstName = firstName
         self.lastName = lastName
         self.emailAddress = emailAddress
