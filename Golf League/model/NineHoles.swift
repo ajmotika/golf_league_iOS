@@ -34,6 +34,7 @@ class NineHoles {
         self.hole9 = hole9
     }
     
+    //MARK: Subscript
     subscript(holeNum: Int) -> Hole? {
         get {
             switch (holeNum) {
@@ -49,5 +50,10 @@ class NineHoles {
             default: return nil
             }
         }
+    }
+    
+    //MARK: Get holes
+    func holes() -> [Hole] {
+        return [hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9]
     }
 }

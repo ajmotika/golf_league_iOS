@@ -51,7 +51,7 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
             fatalError("The hole at \(indexPath.row) doesn't exist")
         }
         
-        cell.setProperties(using: hole)
+        cell.setProperties(using: hole, holeNum: indexPath.row + 1)
         return cell
     }
     
@@ -68,7 +68,7 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
     
     //MARK: Private methods
     private func preloadCourseTee() {
-        let firstNine = NineHoles(
+        let frontNine = NineHoles(
             hole1: Hole(number: 1, par: 4, yardage: 399, handicap: 4),
             hole2: Hole(number: 2, par: 3, yardage: 173, handicap: 16),
             hole3: Hole(number: 3, par: 4, yardage: 331, handicap: 18),
@@ -78,7 +78,18 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
             hole7: Hole(number: 7, par: 3, yardage: 163, handicap: 14),
             hole8: Hole(number: 8, par: 5, yardage: 518, handicap: 10),
             hole9: Hole(number: 9, par: 4, yardage: 456, handicap: 2))
-        tee = CourseTee(color: .blue, rating: 71.0, slope: 115, firstNine: firstNine)
+        
+        let backNine = NineHoles(
+            hole1: Hole(number: 1, par: 4, yardage: 399, handicap: 4),
+            hole2: Hole(number: 2, par: 3, yardage: 173, handicap: 16),
+            hole3: Hole(number: 3, par: 4, yardage: 331, handicap: 18),
+            hole4: Hole(number: 4, par: 4, yardage: 368, handicap: 8),
+            hole5: Hole(number: 5, par: 5, yardage: 501, handicap: 12),
+            hole6: Hole(number: 6, par: 4, yardage: 329, handicap: 6),
+            hole7: Hole(number: 7, par: 3, yardage: 163, handicap: 14),
+            hole8: Hole(number: 8, par: 5, yardage: 518, handicap: 10),
+            hole9: Hole(number: 9, par: 4, yardage: 456, handicap: 2))
+        tee = CourseTee(color: .blue, rating: 71.0, slope: 115, frontNine: frontNine, backNine: backNine)
         
     }
 

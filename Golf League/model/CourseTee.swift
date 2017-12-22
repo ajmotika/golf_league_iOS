@@ -16,19 +16,19 @@ class CourseTee {
     var nines = [NineHoles]()
 
     //MARK: Initializers
-    init(color: UIColor, rating: Float, slope: UInt8, firstNine: NineHoles, secondNine: NineHoles) {
+    init(color: UIColor, rating: Float, slope: UInt8, frontNine: NineHoles, backNine: NineHoles) {
         self.color = color
         self.rating = rating
         self.slope = slope
-        self.nines.insert(firstNine, at: 0)
-        self.nines.insert(secondNine, at: 1)
+        self.nines.insert(frontNine, at: 0)
+        self.nines.insert(backNine, at: 1)
     }
     
-    init(color: UIColor, rating: Float, slope: UInt8, firstNine: NineHoles) {
+    init(color: UIColor, rating: Float, slope: UInt8, frontNine: NineHoles) {
         self.color = color
         self.rating = rating
         self.slope = slope
-        self.nines.insert(firstNine, at: 0)
+        self.nines.insert(frontNine, at: 0)
     }
     
     subscript(holeNum: Int) -> Hole? {

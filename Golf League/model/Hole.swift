@@ -9,6 +9,7 @@
 import Foundation
 
 class Hole {
+    
     //MARK: Properties
     var number: UInt8
     var par: UInt8

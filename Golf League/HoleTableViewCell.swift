@@ -26,8 +26,8 @@ class HoleTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setProperties(using hole: Hole) {
-        self.holeNumberLabel.text = String(hole.number)
+    func setProperties(using hole: Hole, holeNum : Int) {
+        self.holeNumberLabel.text = String(holeNum)
         self.parLabel.text = String(hole.par)
         self.yardageLabel.text = String(hole.yardage)
     }
