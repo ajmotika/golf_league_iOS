@@ -13,7 +13,7 @@ class Round {
     //MARK: Properties
     let tee: CourseTee
     let date: Date
-    var holes = [Int: (Hole, Int?)]()
+    var holes = [Int: (hole: Hole, strokes: Int?)]()
     var score: Int {
         get {
             return 2
@@ -23,6 +23,8 @@ class Round {
     //MARK: Initializers
     init?(_ tee: CourseTee, nines: [Int]) {
         let numNines = tee.nines.count
+        
+        // Load Holes
         for (idx, nine) in nines.enumerated() {
             if numNines < nine {
                 return nil
@@ -44,6 +46,8 @@ class Round {
     convenience init?(backNineOf tee: CourseTee) {
         self.init(tee, nines: [1])
     }
+    
+    
     
     
 }
