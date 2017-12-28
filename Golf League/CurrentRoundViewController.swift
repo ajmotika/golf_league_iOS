@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HoleTableViewCellDelegate {
     
     //MARK: Properties
     @IBOutlet weak var scorecardTableView: UITableView!
@@ -43,20 +43,23 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "HoleTableViewCell"
-        let holeNum = indexPath.row + 1
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HoleTableViewCell else {
             fatalError("The dequeued cell is not an instance of HoleTableViewCell.")
         }
         
-        guard let hole = round?.holes[holeNum]?.hole else {
-            fatalError("The hole at \(holeNum) doesn't exist")
+        guard let roundHole = round?.holes[indexPath.row] else {
+            fatalError("The hole at \(indexPath.row) doesn't exist")
         }
         
-        cell.setProperties(using: hole)
+        cell.setProperties(using: roundHole, delegate: self)
         return cell
     }
     
+    //MARK: HoleTableViewCellDelegate
+    func setNextHole() {
+        round?.incrementHole()
+    }
 
     /*
     // MARK: - Navigation

@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RTc-hF-hrg" id="7nB-j5-9dW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTb-nO-pu1">
@@ -149,7 +149,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6q-HW-Cix">
-                                                    <rect key="frame" x="296.5" y="6" width="63.5" height="31.5"/>
+                                                    <rect key="frame" x="236.5" y="6" width="123.5" height="31.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="right" semanticContentAttribute="forceLeftToRight" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tbj-Rs-eZ9">
                                                             <rect key="frame" x="0.0" y="0.0" width="33.5" height="31.5"/>
@@ -174,6 +174,22 @@
                                                             <state key="normal" title="+"/>
                                                             <connections>
                                                                 <action selector="addStroke:" destination="RTc-hF-hrg" eventType="touchUpInside" id="ZtG-7P-CEq"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oI-5U-o7o">
+                                                            <rect key="frame" x="63.5" y="0.0" width="30" height="31.5"/>
+                                                            <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="31"/>
+                                                            <state key="normal" title="-"/>
+                                                            <connections>
+                                                                <action selector="removeStroke:" destination="RTc-hF-hrg" eventType="touchUpInside" id="FJU-Pd-BiP"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7e-iV-bTa">
+                                                            <rect key="frame" x="93.5" y="0.0" width="30" height="31.5"/>
+                                                            <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="11"/>
+                                                            <state key="normal" title="Done"/>
+                                                            <connections>
+                                                                <action selector="finishHole:" destination="RTc-hF-hrg" eventType="touchUpInside" id="Gr4-0U-f5k"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -202,8 +218,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addStrokeButton" destination="gjm-VH-yKd" id="eoZ-QC-OxJ"/>
+                                            <outlet property="doneWithHoleButton" destination="V7e-iV-bTa" id="9pn-Nd-99U"/>
                                             <outlet property="holeNumberLabel" destination="eTb-nO-pu1" id="Pju-i1-U7Y"/>
                                             <outlet property="parLabel" destination="Kat-Nl-dsy" id="HIH-dw-0cL"/>
+                                            <outlet property="removeStrokeButton" destination="3oI-5U-o7o" id="kRe-rF-DNK"/>
                                             <outlet property="strokesLabel" destination="aHA-95-PjW" id="beL-OE-O3x"/>
                                             <outlet property="strokesStackView" destination="C6q-HW-Cix" id="64R-Qm-c1T"/>
                                             <outlet property="yardageLabel" destination="eTz-p6-GRb" id="3Zo-cb-3Iq"/>

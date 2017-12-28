@@ -13,7 +13,7 @@ class Round {
     //MARK: Properties
     let tee: CourseTee
     let date: Date
-    var holes = [Int: (hole: Hole, strokes: Int?)]()
+    var holes = [RoundHole]()
     var score: Int {
         get {
             return 2
@@ -22,21 +22,23 @@ class Round {
     
     //MARK: Initializers
     init?(_ tee: CourseTee, nines: [Int]) {
-        let numNines = tee.nines.count
+        if tee.nines.isEmpty {
+            return nil
+        }
         
+        let numNines = tee.nines.count
+        self.tee = tee
+        self.date = Date()
         // Load Holes
-        for (idx, nine) in nines.enumerated() {
+        for (_, nine) in nines.enumerated() {
             if numNines < nine {
                 return nil
             }
-            for (holeIdx, hole) in tee.nines[nine].holes().enumerated() {
-                let holeNum : Int = Int(9*idx + holeIdx + 1)
-                holes[holeNum] = (hole, nil)
+            for (_, hole) in tee.nines[nine].holes().enumerated() {
+                holes.append(RoundHole(hole: hole))
             }
         }
-        
-        self.tee = tee
-        self.date = Date()
+        self.holes[0].isCurrent = true
     }
     
     convenience init?(frontNineOf tee: CourseTee) {
@@ -47,7 +49,15 @@ class Round {
         self.init(tee, nines: [1])
     }
     
-    
-    
-    
+    //MARK: Methods
+    func incrementHole() {
+        for (holeIdx, hole) in holes.enumerated() {
+            let nextHoleIdx = holeIdx + 1
+            if hole.isCurrent && nextHoleIdx < holes.count {
+                hole.isCurrent = false
+                holes[nextHoleIdx].isCurrent = true
+                break
+            }
+        }
+    }
 }

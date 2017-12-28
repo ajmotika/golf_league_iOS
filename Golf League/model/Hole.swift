@@ -24,4 +24,11 @@ class Hole {
         self.handicap = handicap
     }
     
+    init(hole: Hole) {
+        self.number = hole.number
+        self.par = hole.par
+        self.yardage = hole.yardage
+        self.handicap = hole.handicap
+    }
+    
 }
