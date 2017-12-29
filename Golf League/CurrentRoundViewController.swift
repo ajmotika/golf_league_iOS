@@ -52,7 +52,10 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
             fatalError("The hole at \(indexPath.row) doesn't exist")
         }
         
+        //if cell.roundHole == nil {
         cell.setProperties(using: roundHole, delegate: self)
+        //}
+        
         return cell
     }
     

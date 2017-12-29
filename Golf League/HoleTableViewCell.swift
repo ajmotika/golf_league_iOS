@@ -25,7 +25,7 @@ class HoleTableViewCell: UITableViewCell, RoundHoleDelegate {
     @IBOutlet weak var doneWithHoleButton: UIButton!
     
     //MARK: Properties
-    var roundHole: RoundHole!
+    var roundHole: RoundHole?
     weak var delegate: HoleTableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -47,29 +47,36 @@ class HoleTableViewCell: UITableViewCell, RoundHoleDelegate {
     //MARK: Init methods
     func setProperties(using hole: RoundHole, delegate: HoleTableViewCellDelegate) {
         self.roundHole = hole
-        self.roundHole.delegate = self
-        self.holeNumberLabel.text = String(self.roundHole.number)
-        self.parLabel.text = String(self.roundHole.par)
-        self.yardageLabel.text = String(self.roundHole.yardage)
+        
+        let rh = unpackRoundHole()
+        
+        rh.delegate = self
+        self.holeNumberLabel.text = String(rh.number)
+        self.parLabel.text = String(rh.par)
+        self.yardageLabel.text = String(rh.yardage)
         self.delegate = delegate
         
         updateStrokesLabel()
-        if !self.roundHole.isCurrent {
+        if !rh.isCurrent {
             removeEditStrokesButtons()
+        } else {
+            addEditStrokesButtons()
         }
     }
 
     //MARK: Actions
     @IBAction func addStroke(_ sender: Any) {
-        roundHole.strokes += 1
+        let rh = unpackRoundHole()
+        rh.strokes += 1
         updateStrokesLabel()
     }
     
     @IBAction func removeStroke(_ sender: Any) {
-        if roundHole.strokes <= 0 {
-            roundHole.strokes = 0
+        let rh = unpackRoundHole()
+        if rh.strokes <= 0 {
+            rh.strokes = 0
         } else {
-            roundHole.strokes = roundHole.strokes - 1
+            rh.strokes = rh.strokes - 1
         }
         updateStrokesLabel()
     }
@@ -85,8 +92,16 @@ class HoleTableViewCell: UITableViewCell, RoundHoleDelegate {
     }
     
     //MARK: Private Methods
+    private func unpackRoundHole() -> RoundHole {
+        guard let rh = self.roundHole else {
+            fatalError("Must pass in hole")
+        }
+        return rh
+    }
+    
     private func updateStrokesLabel() {
-        self.strokesLabel.text = String(roundHole.strokes)
+        let rh = unpackRoundHole()
+        self.strokesLabel.text = String(rh.strokes)
     }
     
     private func removeEditStrokesButtons() {
