@@ -10,9 +10,12 @@ import UIKit
 
 class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HoleTableViewCellDelegate {
     
-    //MARK: Properties
+    //MARK: Outlets
     @IBOutlet weak var scorecardTableView: UITableView!
+    @IBOutlet weak var numStrokesLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
+    //MARK: Properties
     var round: Round?
     
     //MARK: UIViewController methods
@@ -52,9 +55,7 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
             fatalError("The hole at \(indexPath.row) doesn't exist")
         }
         
-        //if cell.roundHole == nil {
         cell.setProperties(using: roundHole, delegate: self)
-        //}
         
         return cell
     }
@@ -62,6 +63,7 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
     //MARK: HoleTableViewCellDelegate
     func setNextHole() {
         round?.incrementHole()
+        updateScores()
     }
 
     /*
@@ -75,6 +77,16 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
     */
     
     //MARK: Private methods
+    private func updateScores() {
+        guard let round = round else {
+            print("round not set")
+            return
+        }
+        
+        numStrokesLabel.text = String(round.strokes)
+        scoreLabel.text = round.score
+    }
+    
     private func preloadRound() {
         let frontNine = NineHoles(
             hole1: Hole(number: 1, par: 4, yardage: 399, handicap: 4),

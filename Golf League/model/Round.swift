@@ -14,9 +14,30 @@ class Round {
     let tee: CourseTee
     let date: Date
     var holes = [RoundHole]()
-    var score: Int {
+    var strokes: Int {
         get {
-            return 2
+            var numStrokes = 0
+            holes.forEach{ roundHole in
+                numStrokes += roundHole.strokes
+            }
+            return numStrokes
+        }
+    }
+    var score: String {
+        get {
+            var score = 0
+            holes.forEach { roundHole in
+                if roundHole.strokes > 0 {
+                    score += roundHole.strokes - roundHole.par
+                }
+            }
+            print(score)
+            if score > 0 {
+                return "+\(score)"
+            } else if score < 0 {
+                return "\(score)"
+            }
+            return "Even"
         }
     }
     

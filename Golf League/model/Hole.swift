@@ -11,13 +11,13 @@ import Foundation
 class Hole {
     
     //MARK: Properties
-    var number: UInt8
-    var par: UInt8
-    var yardage: UInt16
-    var handicap: UInt8
+    var number: Int
+    var par: Int
+    var yardage: Int
+    var handicap: Int
     
     //MARK: Initializers
-    init(number: UInt8, par: UInt8, yardage: UInt16, handicap: UInt8) {
+    init(number: Int, par: Int, yardage: Int, handicap: Int) {
         self.number = number
         self.par = par
         self.yardage = yardage
