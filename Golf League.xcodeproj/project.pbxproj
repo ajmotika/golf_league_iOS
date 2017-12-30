@@ -95,11 +95,9 @@
 		002D13D71FEBE383006AEBE9 /* Golf League */ = {
 			isa = PBXGroup;
 			children = (
+				002D141E1FF7FE2A006AEBE9 /* controller */,
 				002D13FA1FEBEE3A006AEBE9 /* model */,
 				002D13D81FEBE383006AEBE9 /* AppDelegate.swift */,
-				002D13DA1FEBE383006AEBE9 /* ProfileViewController.swift */,
-				002D14011FEC00FB006AEBE9 /* CurrentRoundViewController.swift */,
-				002D14031FEC02FF006AEBE9 /* HoleTableViewCell.swift */,
 				002D13DE1FEBE383006AEBE9 /* Main.storyboard */,
 				002D13E11FEBE383006AEBE9 /* Assets.xcassets */,
 				002D13E31FEBE383006AEBE9 /* LaunchScreen.storyboard */,
@@ -137,6 +135,32 @@
 				002D14141FF312FE006AEBE9 /* GolferTests.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		002D141C1FF7FDAB006AEBE9 /* scorecard */ = {
+			isa = PBXGroup;
+			children = (
+				002D14011FEC00FB006AEBE9 /* CurrentRoundViewController.swift */,
+				002D14031FEC02FF006AEBE9 /* HoleTableViewCell.swift */,
+			);
+			path = scorecard;
+			sourceTree = "<group>";
+		};
+		002D141D1FF7FE14006AEBE9 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				002D13DA1FEBE383006AEBE9 /* ProfileViewController.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		002D141E1FF7FE2A006AEBE9 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				002D141C1FF7FDAB006AEBE9 /* scorecard */,
+				002D141D1FF7FE14006AEBE9 /* profile */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
