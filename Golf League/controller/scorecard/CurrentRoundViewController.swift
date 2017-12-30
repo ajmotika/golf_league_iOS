@@ -14,9 +14,17 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var scorecardTableView: UITableView!
     @IBOutlet weak var numStrokesLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var noRoundLabel: UILabel!
+    @IBOutlet weak var finishScorecardButton: UIBarButtonItem!
+    @IBOutlet weak var scoresStackView: UIStackView!
+    
     
     //MARK: Properties
-    var round: Round?
+    var round: Round? {
+        didSet {
+            setRoundView()
+        }
+    }
     
     //MARK: UIViewController methods
     override func viewDidLoad() {
@@ -27,6 +35,7 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         if round == nil {
+            setRoundView()
             self.performSegue(withIdentifier: "ScorecardToStartRoundSegue", sender: self)
         }
     }
@@ -80,7 +89,7 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBAction func unwindToCurrentRoundFromCancel(sender: UIStoryboardSegue) {
-       
+        
     }
     
     /*
@@ -101,6 +110,26 @@ class CurrentRoundViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    private func setRoundView() {
+        func setNoRoundView() {
+            scorecardTableView.isHidden = true
+            scoresStackView.isHidden = true
+            noRoundLabel.isHidden = false
+            finishScorecardButton.title = "Search"
+        }
+        
+        func setValidRoundView() {
+            scorecardTableView.isHidden = false
+            scoresStackView.isHidden = false
+            noRoundLabel.isHidden = true
+            finishScorecardButton.title = "Finish"
+        }
+        
+        if let _ = round {
+            setValidRoundView()
+        } else {
+            setNoRoundView()
+        }
+    }
     
-
 }
