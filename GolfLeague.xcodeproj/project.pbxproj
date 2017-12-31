@@ -24,7 +24,7 @@
 		002D14191FF3E068006AEBE9 /* RoundHole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D14181FF3E068006AEBE9 /* RoundHole.swift */; };
 		002D14201FF7FF56006AEBE9 /* GolfLeagueTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D141F1FF7FF56006AEBE9 /* GolfLeagueTabBarController.swift */; };
 		002D14281FF82650006AEBE9 /* StartRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D14271FF82650006AEBE9 /* StartRoundViewController.swift */; };
-		1E3BB1140609326B97EC5F52 /* Pods_Golf_League.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADFC9EC592AAF5A7B41277F /* Pods_Golf_League.framework */; };
+		BCC7201A9D3D018322404797 /* Pods_GolfLeague.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326F2FCFEF60E5D56402CA85 /* Pods_GolfLeague.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,14 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002D13D51FEBE383006AEBE9 /* Golf League.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Golf League.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		002D13D51FEBE383006AEBE9 /* GolfLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GolfLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		002D13D81FEBE383006AEBE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		002D13DA1FEBE383006AEBE9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		002D13DF1FEBE383006AEBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		002D13E11FEBE383006AEBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		002D13E41FEBE383006AEBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		002D13E61FEBE383006AEBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		002D13EB1FEBE383006AEBE9 /* Golf LeagueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Golf LeagueTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		002D13EB1FEBE383006AEBE9 /* GolfLeagueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GolfLeagueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		002D13F11FEBE383006AEBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		002D13FB1FEBEE5A006AEBE9 /* Golfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Golfer.swift; sourceTree = "<group>"; };
 		002D14011FEC00FB006AEBE9 /* CurrentRoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRoundViewController.swift; sourceTree = "<group>"; };
@@ -59,8 +59,9 @@
 		002D14181FF3E068006AEBE9 /* RoundHole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundHole.swift; sourceTree = "<group>"; };
 		002D141F1FF7FF56006AEBE9 /* GolfLeagueTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfLeagueTabBarController.swift; sourceTree = "<group>"; };
 		002D14271FF82650006AEBE9 /* StartRoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRoundViewController.swift; sourceTree = "<group>"; };
-		7144A7B37948038D60B56A7B /* Pods-Golf League.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf League.release.xcconfig"; path = "Pods/Target Support Files/Pods-Golf League/Pods-Golf League.release.xcconfig"; sourceTree = "<group>"; };
-		CE8B6A1D30A405FAC883D873 /* Pods-Golf League.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf League.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Golf League/Pods-Golf League.debug.xcconfig"; sourceTree = "<group>"; };
+		326F2FCFEF60E5D56402CA85 /* Pods_GolfLeague.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GolfLeague.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7A2F3E929B97ADA3C0D6D39 /* Pods-GolfLeague.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GolfLeague.release.xcconfig"; path = "Pods/Target Support Files/Pods-GolfLeague/Pods-GolfLeague.release.xcconfig"; sourceTree = "<group>"; };
+		E436F0AE7E5C1DF22E4190B9 /* Pods-GolfLeague.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GolfLeague.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GolfLeague/Pods-GolfLeague.debug.xcconfig"; sourceTree = "<group>"; };
 		FADFC9EC592AAF5A7B41277F /* Pods_Golf_League.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Golf_League.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E3BB1140609326B97EC5F52 /* Pods_Golf_League.framework in Frameworks */,
+				BCC7201A9D3D018322404797 /* Pods_GolfLeague.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +87,8 @@
 		002D13CC1FEBE382006AEBE9 = {
 			isa = PBXGroup;
 			children = (
-				002D13D71FEBE383006AEBE9 /* Golf League */,
-				002D13EE1FEBE383006AEBE9 /* Golf LeagueTests */,
+				002D13D71FEBE383006AEBE9 /* GolfLeague */,
+				002D13EE1FEBE383006AEBE9 /* GolfLeagueTests */,
 				002D13D61FEBE383006AEBE9 /* Products */,
 				9B97A36D91F127FA135302FD /* Pods */,
 				4A9B52277767E468F0938E42 /* Frameworks */,
@@ -97,13 +98,13 @@
 		002D13D61FEBE383006AEBE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				002D13D51FEBE383006AEBE9 /* Golf League.app */,
-				002D13EB1FEBE383006AEBE9 /* Golf LeagueTests.xctest */,
+				002D13D51FEBE383006AEBE9 /* GolfLeague.app */,
+				002D13EB1FEBE383006AEBE9 /* GolfLeagueTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		002D13D71FEBE383006AEBE9 /* Golf League */ = {
+		002D13D71FEBE383006AEBE9 /* GolfLeague */ = {
 			isa = PBXGroup;
 			children = (
 				002D141E1FF7FE2A006AEBE9 /* controller */,
@@ -114,16 +115,16 @@
 				002D13E31FEBE383006AEBE9 /* LaunchScreen.storyboard */,
 				002D13E61FEBE383006AEBE9 /* Info.plist */,
 			);
-			path = "Golf League";
+			path = GolfLeague;
 			sourceTree = "<group>";
 		};
-		002D13EE1FEBE383006AEBE9 /* Golf LeagueTests */ = {
+		002D13EE1FEBE383006AEBE9 /* GolfLeagueTests */ = {
 			isa = PBXGroup;
 			children = (
 				002D14131FF312D5006AEBE9 /* model */,
 				002D13F11FEBE383006AEBE9 /* Info.plist */,
 			);
-			path = "Golf LeagueTests";
+			path = GolfLeagueTests;
 			sourceTree = "<group>";
 		};
 		002D13FA1FEBEE3A006AEBE9 /* model */ = {
@@ -180,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				FADFC9EC592AAF5A7B41277F /* Pods_Golf_League.framework */,
+				326F2FCFEF60E5D56402CA85 /* Pods_GolfLeague.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,8 +189,8 @@
 		9B97A36D91F127FA135302FD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CE8B6A1D30A405FAC883D873 /* Pods-Golf League.debug.xcconfig */,
-				7144A7B37948038D60B56A7B /* Pods-Golf League.release.xcconfig */,
+				E436F0AE7E5C1DF22E4190B9 /* Pods-GolfLeague.debug.xcconfig */,
+				A7A2F3E929B97ADA3C0D6D39 /* Pods-GolfLeague.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -196,9 +198,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		002D13D41FEBE383006AEBE9 /* Golf League */ = {
+		002D13D41FEBE383006AEBE9 /* GolfLeague */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 002D13F41FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "Golf League" */;
+			buildConfigurationList = 002D13F41FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "GolfLeague" */;
 			buildPhases = (
 				5F4FF080C8A6789E83CFBBAC /* [CP] Check Pods Manifest.lock */,
 				002D13D11FEBE383006AEBE9 /* Sources */,
@@ -211,14 +213,14 @@
 			);
 			dependencies = (
 			);
-			name = "Golf League";
+			name = GolfLeague;
 			productName = "Golf League";
-			productReference = 002D13D51FEBE383006AEBE9 /* Golf League.app */;
+			productReference = 002D13D51FEBE383006AEBE9 /* GolfLeague.app */;
 			productType = "com.apple.product-type.application";
 		};
-		002D13EA1FEBE383006AEBE9 /* Golf LeagueTests */ = {
+		002D13EA1FEBE383006AEBE9 /* GolfLeagueTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 002D13F71FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "Golf LeagueTests" */;
+			buildConfigurationList = 002D13F71FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "GolfLeagueTests" */;
 			buildPhases = (
 				002D13E71FEBE383006AEBE9 /* Sources */,
 				002D13E81FEBE383006AEBE9 /* Frameworks */,
@@ -229,9 +231,9 @@
 			dependencies = (
 				002D13ED1FEBE383006AEBE9 /* PBXTargetDependency */,
 			);
-			name = "Golf LeagueTests";
+			name = GolfLeagueTests;
 			productName = "Golf LeagueTests";
-			productReference = 002D13EB1FEBE383006AEBE9 /* Golf LeagueTests.xctest */;
+			productReference = 002D13EB1FEBE383006AEBE9 /* GolfLeagueTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +257,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 002D13D01FEBE382006AEBE9 /* Build configuration list for PBXProject "Golf League" */;
+			buildConfigurationList = 002D13D01FEBE382006AEBE9 /* Build configuration list for PBXProject "GolfLeague" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -268,8 +270,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				002D13D41FEBE383006AEBE9 /* Golf League */,
-				002D13EA1FEBE383006AEBE9 /* Golf LeagueTests */,
+				002D13D41FEBE383006AEBE9 /* GolfLeague */,
+				002D13EA1FEBE383006AEBE9 /* GolfLeagueTests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,7 +308,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Golf League-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GolfLeague-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -319,7 +321,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Golf League/Pods-Golf League-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-GolfLeague/Pods-GolfLeague-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -328,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Golf League/Pods-Golf League-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GolfLeague/Pods-GolfLeague-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C37A69A99E6B87E38EBA28EA /* [CP] Copy Pods Resources */ = {
@@ -343,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Golf League/Pods-Golf League-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GolfLeague/Pods-GolfLeague-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -382,7 +384,7 @@
 /* Begin PBXTargetDependency section */
 		002D13ED1FEBE383006AEBE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 002D13D41FEBE383006AEBE9 /* Golf League */;
+			target = 002D13D41FEBE383006AEBE9 /* GolfLeague */;
 			targetProxy = 002D13EC1FEBE383006AEBE9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -516,13 +518,13 @@
 		};
 		002D13F51FEBE383006AEBE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE8B6A1D30A405FAC883D873 /* Pods-Golf League.debug.xcconfig */;
+			baseConfigurationReference = E436F0AE7E5C1DF22E4190B9 /* Pods-GolfLeague.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Golf League/Info.plist";
+				INFOPLIST_FILE = GolfLeague/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ajmo.Golf-League";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajmo.GolfLeague;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,13 +533,13 @@
 		};
 		002D13F61FEBE383006AEBE9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7144A7B37948038D60B56A7B /* Pods-Golf League.release.xcconfig */;
+			baseConfigurationReference = A7A2F3E929B97ADA3C0D6D39 /* Pods-GolfLeague.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Golf League/Info.plist";
+				INFOPLIST_FILE = GolfLeague/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ajmo.Golf-League";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajmo.GolfLeague;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -550,13 +552,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Golf LeagueTests/Info.plist";
+				INFOPLIST_FILE = GolfLeagueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ajmo.Golf-LeagueTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajmo.GolfLeagueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Golf League.app/Golf League";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GolfLeague.app/GolfLeague";
 			};
 			name = Debug;
 		};
@@ -566,20 +568,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Golf LeagueTests/Info.plist";
+				INFOPLIST_FILE = GolfLeagueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ajmo.Golf-LeagueTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajmo.GolfLeagueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Golf League.app/Golf League";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GolfLeague.app/GolfLeague";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		002D13D01FEBE382006AEBE9 /* Build configuration list for PBXProject "Golf League" */ = {
+		002D13D01FEBE382006AEBE9 /* Build configuration list for PBXProject "GolfLeague" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				002D13F21FEBE383006AEBE9 /* Debug */,
@@ -588,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		002D13F41FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "Golf League" */ = {
+		002D13F41FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "GolfLeague" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				002D13F51FEBE383006AEBE9 /* Debug */,
@@ -597,7 +599,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		002D13F71FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "Golf LeagueTests" */ = {
+		002D13F71FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "GolfLeagueTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				002D13F81FEBE383006AEBE9 /* Debug */,
