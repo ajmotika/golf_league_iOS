@@ -24,6 +24,7 @@
 		002D14191FF3E068006AEBE9 /* RoundHole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D14181FF3E068006AEBE9 /* RoundHole.swift */; };
 		002D14201FF7FF56006AEBE9 /* GolfLeagueTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D141F1FF7FF56006AEBE9 /* GolfLeagueTabBarController.swift */; };
 		002D14281FF82650006AEBE9 /* StartRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D14271FF82650006AEBE9 /* StartRoundViewController.swift */; };
+		1E3BB1140609326B97EC5F52 /* Pods_Golf_League.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADFC9EC592AAF5A7B41277F /* Pods_Golf_League.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,9 @@
 		002D14181FF3E068006AEBE9 /* RoundHole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundHole.swift; sourceTree = "<group>"; };
 		002D141F1FF7FF56006AEBE9 /* GolfLeagueTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfLeagueTabBarController.swift; sourceTree = "<group>"; };
 		002D14271FF82650006AEBE9 /* StartRoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRoundViewController.swift; sourceTree = "<group>"; };
+		7144A7B37948038D60B56A7B /* Pods-Golf League.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf League.release.xcconfig"; path = "Pods/Target Support Files/Pods-Golf League/Pods-Golf League.release.xcconfig"; sourceTree = "<group>"; };
+		CE8B6A1D30A405FAC883D873 /* Pods-Golf League.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf League.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Golf League/Pods-Golf League.debug.xcconfig"; sourceTree = "<group>"; };
+		FADFC9EC592AAF5A7B41277F /* Pods_Golf_League.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Golf_League.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E3BB1140609326B97EC5F52 /* Pods_Golf_League.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +89,8 @@
 				002D13D71FEBE383006AEBE9 /* Golf League */,
 				002D13EE1FEBE383006AEBE9 /* Golf LeagueTests */,
 				002D13D61FEBE383006AEBE9 /* Products */,
+				9B97A36D91F127FA135302FD /* Pods */,
+				4A9B52277767E468F0938E42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +176,23 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		4A9B52277767E468F0938E42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FADFC9EC592AAF5A7B41277F /* Pods_Golf_League.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B97A36D91F127FA135302FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B6A1D30A405FAC883D873 /* Pods-Golf League.debug.xcconfig */,
+				7144A7B37948038D60B56A7B /* Pods-Golf League.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 002D13F41FEBE383006AEBE9 /* Build configuration list for PBXNativeTarget "Golf League" */;
 			buildPhases = (
+				5F4FF080C8A6789E83CFBBAC /* [CP] Check Pods Manifest.lock */,
 				002D13D11FEBE383006AEBE9 /* Sources */,
 				002D13D21FEBE383006AEBE9 /* Frameworks */,
 				002D13D31FEBE383006AEBE9 /* Resources */,
+				B2431B5990E826E046AA35AB /* [CP] Embed Pods Frameworks */,
+				C37A69A99E6B87E38EBA28EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +293,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F4FF080C8A6789E83CFBBAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Golf League-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2431B5990E826E046AA35AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Golf League/Pods-Golf League-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Golf League/Pods-Golf League-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C37A69A99E6B87E38EBA28EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Golf League/Pods-Golf League-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		002D13D11FEBE383006AEBE9 /* Sources */ = {
@@ -435,6 +516,7 @@
 		};
 		002D13F51FEBE383006AEBE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE8B6A1D30A405FAC883D873 /* Pods-Golf League.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +531,7 @@
 		};
 		002D13F61FEBE383006AEBE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7144A7B37948038D60B56A7B /* Pods-Golf League.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
