@@ -10,32 +10,35 @@ import UIKit
 import os.log
 import SearchTextField
 
-class StartRoundViewController: UIViewController {
-    
+class StartRoundViewController: UIViewController, CourseTeePickerViewDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var startButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var golfCoursePickerField: SearchTextField!
+    @IBOutlet weak var courseTeePickerField: CourseTeePickerView!
     
     
     //MARK: Properties
     var round: Round?
-    var courses = [String: GolfCourse]()
+    private var courses = [String: GolfCourse]()
+    private var selectedGolfCourse: GolfCourse? {
+        didSet {
+            courseTeePickerField.selectedGolfCourse = selectedGolfCourse
+        }
+    }
+    private var selectedGolfTee: CourseTee? {
+        didSet {
+            print("selected golf tee \(selectedGolfTee?.color.name)")
+        }
+    }
+    
     
     //MARK: UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        golfCoursePickerField.filterItems([createFoxfireGolfCourse(), createShamrockGolfCourse(), createSafariGolfCourse()])
-        golfCoursePickerField.startVisible = true
-        
-        golfCoursePickerField.itemSelectionHandler = {filteredResults, itemPosition in
-            let golfCourseTitle = filteredResults[itemPosition].title
-            self.golfCoursePickerField.text = golfCourseTitle
-            if let golfTee = self.courses[golfCourseTitle]?.tees[0] {
-                self.round = Round(golfTee, nines: [0,1])
-            }
-            
-        }
+        courseTeePickerField.courseTeeDelegate = self
+        setupTextField()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,12 +50,47 @@ class StartRoundViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIBarButtonItem, button === startButton else {
-            os_log("The start button was not pressed, cancelling", log: OSLog.default, type: .debug)
+        guard let button = sender as? UIBarButtonItem else {
+            os_log("The bar button item was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
+        
+        if button === startButton {
+            print("seguing with start button")
+        } else if button === cancelButton {
+            print("seguing with cancel button")
+        }
+        
     }
+    
+    //MARK: CourseTeePickerViewDelegate
+    func teeSelected(_ courseTee: CourseTee) {
+        selectedGolfTee = courseTee
+    }
+    
+    //MARK: SearchTextField methods
+    private func setupTextField() {
+        golfCoursePickerField.filterItems([createFoxfireGolfCourse(), createShamrockGolfCourse(), createSafariGolfCourse()])
+        golfCoursePickerField.startVisible = true
+        
+        func setupSelectionHandler() {
+    
+            golfCoursePickerField.itemSelectionHandler = {filteredResults, itemPosition in
+                let golfCourseTitle = filteredResults[itemPosition].title
+                self.golfCoursePickerField.text = golfCourseTitle
+                if let golfCourse = self.courses[golfCourseTitle] {
+                    print("selected golf course")
+                    self.selectedGolfCourse = golfCourse
+                    self.courseTeePickerField.reloadAllComponents()
+                }
+                
+            }
+        }
+        
+        setupSelectionHandler()
+    }
+    
+    
     
     //MARK: Private Methods
     private func createFoxfireGolfCourse() -> SearchTextFieldItem {
@@ -78,8 +116,15 @@ class StartRoundViewController: UIViewController {
             hole8: Hole(number: 17, par: 5, yardage: 171, handicap: 17),
             hole9: Hole(number: 18, par: 4, yardage: 424, handicap: 5))
         let blueTee = CourseTee(color: .blue, rating: 71.0, slope: 115, frontNine: frontNine, backNine: backNine)
+        let redTee = CourseTee(color: .red, rating: 69.0, slope: 105, frontNine: frontNine, backNine: backNine)
+        let whiteTee = CourseTee(color: .white, rating: 70.0, slope: 110, frontNine: frontNine, backNine: backNine)
+        let goldTee = CourseTee(color: .yellow, rating: 68.0, slope: 100, frontNine: frontNine, backNine: backNine)
         let foxfireGC = GolfCourse(name: "Foxfire", address: "", phoneNumber: 123456789)
+        foxfireGC.tees.append(goldTee)
+        foxfireGC.tees.append(redTee)
+        foxfireGC.tees.append(whiteTee)
         foxfireGC.tees.append(blueTee)
+        
         courses["Foxfire"] = foxfireGC
         return SearchTextFieldItem(title: "Foxfire", subtitle: "1 mile away")
     }

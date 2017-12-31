@@ -85,6 +85,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Tee:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0g-aV-A9Z">
+                                <rect key="frame" x="16" y="160" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q76-HL-DoC" customClass="CourseTeePickerView" customModule="GolfLeague" customModuleProvider="target">
+                                <rect key="frame" x="16" y="189" width="343" height="71"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -107,8 +118,10 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="Qdd-nc-bBU" id="IWr-ZM-yaR"/>
+                        <outlet property="courseTeePickerField" destination="Q76-HL-DoC" id="IBi-fA-FKS"/>
                         <outlet property="golfCoursePickerField" destination="8Tf-tP-pV5" id="PYD-30-YKs"/>
-                        <outlet property="startButton" destination="71e-tG-7Mv" id="feP-vs-RD4"/>
+                        <outlet property="startButton" destination="71e-tG-7Mv" id="g9J-BE-0Pj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmS-AF-BsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
