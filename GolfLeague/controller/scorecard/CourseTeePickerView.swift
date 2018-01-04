@@ -15,7 +15,7 @@ protocol CourseTeePickerViewDelegate: class {
 class CourseTeePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     //MARK: Properties
-    var selectedGolfCourse: GolfCourse? {
+    var golfCourse: GolfCourse? {
         didSet {
             self.reloadAllComponents()
         }
@@ -41,22 +41,22 @@ class CourseTeePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        guard let golfCourse = selectedGolfCourse else {
+        guard let gc = self.golfCourse else {
             return 0
         }
-        return golfCourse.tees.count
+        return gc.tees.count
     }
     
     //MARK: UIPickerViewDelegate
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        guard let golfCourse = selectedGolfCourse else {
+        guard let gc = self.golfCourse else {
             return nil
         }
-        return golfCourse.tees[row].color.name
+        return gc.tees[row].color.name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        guard let courseTee = selectedGolfCourse?.tees[row] else {
+        guard let courseTee = self.golfCourse?.tees[row] else {
             print("unable to find course tee")
             return
         }

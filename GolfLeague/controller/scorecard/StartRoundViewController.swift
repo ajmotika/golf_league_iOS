@@ -16,48 +16,55 @@ class StartRoundViewController: UIViewController, CourseTeePickerViewDelegate {
     @IBOutlet weak var startButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var golfCoursePickerField: SearchTextField!
-    @IBOutlet weak var courseTeePickerField: CourseTeePickerView!
-    
+    @IBOutlet weak var golfCourseView: GolfCourseView!
+    @IBOutlet weak var courseTeePickerView: CourseTeePickerView!
     
     //MARK: Properties
     var round: Round?
     private var courses = [String: GolfCourse]()
     private var selectedGolfCourse: GolfCourse? {
         didSet {
-            courseTeePickerField.selectedGolfCourse = selectedGolfCourse
+            if selectedGolfCourse != nil {
+                self.golfCourseView.golfCourse = selectedGolfCourse
+                self.courseTeePickerView.golfCourse = selectedGolfCourse
+                //golfCourseView.isHidden = false
+            } else {
+                //golfCourseView.isHidden = true
+            }
         }
     }
-    private var selectedGolfTee: CourseTee? {
+    private var selectedTee: CourseTee? {
         didSet {
-            print("selected golf tee \(selectedGolfTee?.color.name)")
+            print("tee.... \(selectedTee?.color.name)")
         }
     }
-    
     
     //MARK: UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        courseTeePickerField.courseTeeDelegate = self
+        courseTeePickerView.courseTeeDelegate = self
+       // golfCourseView.isHidden = true
         setupTextField()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
   
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        guard let button = sender as? UIBarButtonItem else {
+        guard let button = sender as? UIBarButtonItem, let tee = selectedTee else {
             os_log("The bar button item was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
         
         if button === startButton {
+            round = Round(backNineOf: tee)
             print("seguing with start button")
         } else if button === cancelButton {
+            round = nil
             print("seguing with cancel button")
         }
         
@@ -65,7 +72,7 @@ class StartRoundViewController: UIViewController, CourseTeePickerViewDelegate {
     
     //MARK: CourseTeePickerViewDelegate
     func teeSelected(_ courseTee: CourseTee) {
-        selectedGolfTee = courseTee
+        selectedTee = courseTee
     }
     
     //MARK: SearchTextField methods
@@ -81,9 +88,9 @@ class StartRoundViewController: UIViewController, CourseTeePickerViewDelegate {
                 if let golfCourse = self.courses[golfCourseTitle] {
                     print("selected golf course")
                     self.selectedGolfCourse = golfCourse
-                    self.courseTeePickerField.reloadAllComponents()
+                    self.courseTeePickerView.reloadAllComponents()
                 }
-                
+                self.golfCoursePickerField.resignFirstResponder()
             }
         }
         
