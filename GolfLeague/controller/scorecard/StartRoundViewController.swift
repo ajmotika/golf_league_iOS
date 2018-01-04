@@ -27,9 +27,9 @@ class StartRoundViewController: UIViewController, CourseTeePickerViewDelegate {
             if selectedGolfCourse != nil {
                 self.golfCourseView.golfCourse = selectedGolfCourse
                 self.courseTeePickerView.golfCourse = selectedGolfCourse
-                //golfCourseView.isHidden = false
+                golfCourseIsHidden(false)
             } else {
-                //golfCourseView.isHidden = true
+                golfCourseIsHidden(true)
             }
         }
     }
@@ -43,7 +43,7 @@ class StartRoundViewController: UIViewController, CourseTeePickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         courseTeePickerView.courseTeeDelegate = self
-       // golfCourseView.isHidden = true
+        golfCourseIsHidden(true)
         setupTextField()
     }
 
@@ -100,6 +100,17 @@ class StartRoundViewController: UIViewController, CourseTeePickerViewDelegate {
     
     
     //MARK: Private Methods
+    private func golfCourseIsHidden(_ is_hidden: Bool) {
+        if is_hidden {
+            golfCourseView.isHidden = true
+            courseTeePickerView.isHidden = true
+        } else {
+            golfCourseView.isHidden = false
+            courseTeePickerView.isHidden = false
+        }
+    }
+    
+    
     private func createFoxfireGolfCourse() -> SearchTextFieldItem {
         let frontNine = NineHoles(
             hole1: Hole(number: 1, par: 4, yardage: 399, handicap: 4),
